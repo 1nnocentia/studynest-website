@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: 'Source Sans 3', sans-serif;
+    background: linear-gradient(to bottom right, #D4E6B5, #AFC97E, #E2D686);
+  }
+  
+  .navbar {
+    background: transparent;
+    font-family: 'Playfair Display', serif;
+    padding-top: 1rem;
+  }
+  
+  .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    font-weight: 100;
+  }
+  
+  .nav-link {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+  }
+  
+  .hero-section {
+    height: 90vh;
+  }
+  
+  .hero-logo {
+    width: 300px;
+    max-width: 100%;
+  }
+  
+  .title-text {
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 6rem;
+    letter-spacing: 5px;
+  }
+
+  .body-text{
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+  }
+  
+  .focus-btn {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    padding: 10px 30px;
+    color: #B11414;
+    background-color: #FFDF64;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 3px;
+  }
+  
+  .focus-btn:hover {
+    background-color: #ffd84a;
+    color: #9e1010;
+  }

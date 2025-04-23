@@ -1,0 +1,84 @@
+.navbar {
+    background-color: rgba(135, 123, 102, 0.50);
+    font-family: 'Playfair Display', serif;
+    padding-top: 1rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    font-weight: 100;
+  }
+  
+  .nav-link {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Mencegah scrolling */
+  }
+
+  body {
+    background-image: url('bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  
+  
+  .timer-card {
+    background-color: rgba(135, 123, 102, 0.50);
+    max-width: 420px;
+    width: 90%;
+  }
+  
+  .mode-item {
+    cursor: pointer;
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+  }
+  
+  .mode-item:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+  }
+  
+  .mode-item.active {
+    color: #ffffff;
+    border-bottom: 2px solid #FFDF64;
+  }
+  
+  .d-flex.justify-content-center.align-items-center {
+    display: flex;
+    flex-direction: column; /* Agar timer berada di atas dan konten lainnya di bawah */
+    justify-content: flex-start; /* Posisi timer di atas */
+    height: 100vh; /* Full height untuk memastikan konten dapat berada di atas */
+    padding-top: 20px; /* Memberi sedikit jarak di atas */
+  }
+
+  /* Posisi Spotify iframe di kiri bawah */
+.spotify-container {
+  position: fixed; /* Memastikan elemen tetap pada posisi yang ditentukan */
+  bottom: 20px; /* Jarak dari bawah halaman */
+  left: 20px; /* Jarak dari kiri halaman */
+  width: 300px; /* Lebar maksimal untuk iframe */
+  height: 80px; /* Tinggi iframe */
+  border-radius: 8px; /* Membuat sudutnya lebih halus */
+  z-index: 1000; /* Pastikan berada di atas konten lainnya */
+  background-color: rgba(0, 0, 0, 0.7); /* Latar belakang transparan */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Memberikan bayangan */
+}
+
+#spotify {
+  border-radius: 8px; /* Memberikan border-radius pada iframe */
+}
