@@ -4,14 +4,13 @@ html, body {
   font-family: 'Source Sans 3', sans-serif;
   background: linear-gradient(to bottom right, #E2D686, #CBD082, #AFC97E);
   background-repeat: no-repeat;
-  height: 100%;
   background-size: cover;
 }
 
 .navbar {
   background-color: rgba(135, 123, 102, 0.50);
   font-family: 'Playfair Display', serif;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   position: absolute;
   top: 0;
   width: 100%;
@@ -30,7 +29,7 @@ html, body {
 }
 
 .about-section {
-  padding-top: 65px; /* memberi jarak dari navbar */
+  padding-top: 55px; /* memberi jarak dari navbar */
 }
 
 .about-section img {
@@ -49,9 +48,10 @@ html, body {
 .custom-quote {
   position: relative;
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: #333;
-  padding-left: 1.8rem;
+  padding-left: 4rem;
+  line-height: 1.4;
 }
 
 .custom-quote::before {
@@ -63,3 +63,12 @@ html, body {
   top: -5px;
   line-height: 1;
 }
+
+p {
+  font-size: 0.9rem;
+}
+
+section {
+  margin-bottom: 150px;
+}
+

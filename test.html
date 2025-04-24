@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager Section</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Source Sans 3', sans-serif;
+      color: white;
+    }
+
+    .task-section {
+      padding: 100px 40px 60px;
+    }
+
+    .task-box {
+      background-color: #7b6b55;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .reminder-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #5c503f;
+      border-radius: 5px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+    }
+
+    .reminder-item label {
+      margin: 0;
+      flex: 1;
+    }
+
+    .reminder-box input[type="text"],
+    .happening-input {
+      background: transparent;
+      border: none;
+      border-bottom: none;
+      color: white;
+      outline: none;
+      padding: 8px 4px;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .reminder-box input::placeholder,
+    .happening-input::placeholder {
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .row-cols-md-2 {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="task-section">
+    <div class="row row-cols-1 row-cols-md-2 g-4 d-flex">
+      <!-- What's Happening -->
+      <div class="col">
+        <div class="task-box">
+          <h5>📌 What is happening this week?</h5>
+          <div id="happeningList">
+            <input type="text" class="happening-input" placeholder="Happening 1">
+            <input type="text" class="happening-input" placeholder="Happening 2">
+          </div>
+        </div>
+      </div>
+
+      <!-- Reminder Section -->
+      <div class="col">
+        <div class="task-box reminder-box">
+          <h5>❗ Reminder</h5>
+          <div id="reminderList"></div>
+          <input type="text" id="reminderInput" placeholder="Write a reminder...">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Reminder Logic
+    const reminderInput = document.getElementById("reminderInput");
+    const reminderList = document.getElementById("reminderList");
+
+    reminderInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter" && reminderInput.value.trim() !== "") {
+        addReminder(reminderInput.value.trim());
+        reminderInput.value = "";
+      }
+    });
+
+    function addReminder(text) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "reminder-item";
+
+      const label = document.createElement("label");
+      label.textContent = text;
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+          wrapper.remove();
+        }
+      });
+
+      wrapper.prepend(checkbox);
+      wrapper.appendChild(label);
+      reminderList.appendChild(wrapper);
+    }
+
+    // Happening Logic
+    const happeningList = document.getElementById("happeningList");
+
+    function updatePlaceholders() {
+      const inputs = happeningList.querySelectorAll(".happening-input");
+      inputs.forEach((input, index) => {
+        input.placeholder = `Happening ${index + 1}`;
+      });
+    }
+
+    happeningList.addEventListener("keypress", function (e) {
+      if (e.target.classList.contains("happening-input") && e.key === "Enter") {
+        const value = e.target.value.trim();
+        const inputs = happeningList.querySelectorAll(".happening-input");
+        const isLast = inputs[inputs.length - 1] === e.target;
+
+        if (value !== "" && isLast) {
+          const newInput = document.createElement("input");
+          newInput.type = "text";
+          newInput.className = "happening-input";
+          happeningList.appendChild(newInput);
+          newInput.focus();
+          updatePlaceholders();
+        }
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      const inputs = happeningList.querySelectorAll(".happening-input");
+      inputs.forEach((input, index) => {
+        if (index >= 2 && input.value.trim() === "" && !input.contains(e.target) && document.activeElement !== input) {
+          input.remove();
+          updatePlaceholders();
+        }
+      });
+    });
+
+    updatePlaceholders(); // initial setup
+  </script>
+
+</body>
+</html>

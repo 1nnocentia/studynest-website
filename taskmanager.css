@@ -1,0 +1,61 @@
+.navbar {
+    background-color: #877B66;
+    font-family: 'Playfair Display', serif;
+    padding-top: 0.5rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 100;
+  }
+  
+  .nav-link {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Mencegah scrolling */
+  }
+
+  body {
+    background-image: url('bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  
+
+.playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .task-section {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .text-brown {
+    color: #4A4235;
+  }
+
+  .quote-box-green {
+    background-color: #b7ce85;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    border-radius: 0.375rem;
+  }

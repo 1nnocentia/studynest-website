@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <!--CSS-->
-  <link rel="stylesheet" href="pomodorotimerstyle.css" />
+  <link rel="stylesheet" href="taskmanager.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
@@ -19,13 +19,66 @@
     <div class="container-fluid px-4">
       <a class="navbar-brand fw-bold text-white d-flex align-items-center gap-2" href="index.html">
         <img src="logo.png" alt="logo" style="height: 30px;"/>
-        STUDY NEST</a>
+        TASK MANAGER</a>
       <div class="ms-auto d-flex align-items-center">
-        <a class="nav-link text-white" href="#">About</a>
+        <a class="nav-link text-white" href="index.html">Home</a>
         <span class="px-2 text-white">|</span>
         <a class="nav-link text-white" href="#">Log In</a>
       </div>
     </div>
   </nav> 
+
+  <!--Section1 - Space between nav and next section-->
+  <section class="py-5 text-white" style="width: 100%; height: 200px;">
+  </section>
+
+  <!--Section2 - Whats happening & Reminder-->
+  <section class="task-section py-5 text-white">
+    <div class="container">
+      <h2 class="mb-5 playfair">My Task Manager</h2>
+  
+      <div class="row g-4">
+        <!--quote box hijau-->
+        <div class="col-md-3">
+          <div class="quote-box-green">
+            <div>
+            <p class="text-brown">Wake up <span class="text-success">determined</span></p>
+            <p class="text-brown">Go to bed <span class="text-danger">satisfied</span></p>
+          </div>
+          </div>
+        </div>
+  
+        <!-- Kolom kanan besar -->
+        <div class="col-md-9">
+          <div class="p-3 rounded" style="background-color: #8b7e65;">
+            <p>📌 <strong>What is happening this week?</strong></p>
+            <ul class="mb-0">
+              <li>Happening 1</li>
+              <li>Happening 2</li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Baris bawah (2 kolom) -->
+        <div class="col-md-6">
+          <div class="p-3 rounded" style="background-color: #8b7e65;">
+            <p>❗<strong> Reminder</strong></p>
+            <ul class="mb-0">
+              <li>Reminder 1</li>
+              <li>Reminder 2</li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="col-md-5">
+          <div class="p-3 rounded" style="background-color: #8b7e65;">
+            <p>🌞 <strong>My daily affirmation</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  </section>
 </body>
 </html>
