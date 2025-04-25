@@ -76,7 +76,7 @@
 
         <!-- My daily affirmation -->
         <div class="col-md-6">
-          <div class="p-3 rounded" style="background-color: #8b7e65;">
+          <div class="task-box">
             <p>🌞 <strong>My daily affirmation</strong></p>
             <input type="text" class="affirmation-input" placeholder="Today affirmation...">
           </div>
@@ -88,34 +88,40 @@
   <!-- Section4-->
   <section class="task-section py-5 text-white">
     <div class="container">
-      <!-- QUICK BUTTON -->
-      <div class="bg-brown p-2 rounded mb-4">
-        <h5 class="mb-0">Quick Button</h5>
-      </div>
-  
-      <div class="row text-center mb-5">
-        <div class="col">
-          <i class="bi bi-clock display-6 d-block"></i>
-          <span>Pomodoro Timer</span>
-        </div>
-        <div class="col">
-          <i class="bi bi-kanban display-6 d-block"></i>
-          <span>Task</span>
-        </div>
-      </div>
-  
-      <!-- TASK TITLE -->
-      <div class="bg-brown p-2 rounded mb-3">
-        <h5 class="mb-0">Task</h5>
-      </div>
-  
       <div class="row">
-        <!-- TABLE TASK -->
+        <!-- KIRI -->
         <div class="col-lg-8">
-          <table class="table table-bordered table-dark table-sm align-middle text-white">
+          <!-- QUICK BUTTON HEADER -->
+          <div class="bg-brown p-2 rounded mb-4">
+            <h5 class="mb-0">Quick Button</h5>
+          </div>
+  
+          <!-- QUICK BUTTON -->
+          <div class="row text-center mb-5">
+            <div class="col">
+              <a href="pomodorotimer.html" class="quick-btn d-block p-3 rounded text-white text-decoration-none">
+                <i class="bi bi-clock display-6 d-block"></i>
+                <span>Pomodoro Timer</span>
+              </a>
+            </div>
+            <div class="col">
+              <a href="#taskTable" class="quick-btn d-block p-3 rounded text-white text-decoration-none">
+                <i class="bi bi-kanban display-6 d-block"></i>
+                <span>Task</span>
+              </a>
+            </div>
+          </div>
+  
+          <!-- TASK HEADER -->
+          <div class="bg-brown p-2 rounded mb-3" id="taskTable">
+            <h5 class="mb-0">Task</h5>
+          </div>
+  
+          <!-- TABEL TASK -->
+          <table class="table table-borderless text-white align-middle" id="taskTable">
             <thead>
               <tr class="text-center">
-                <th>Priority</th>
+                <th class="text-white">Priority</th>
                 <th>Name</th>
                 <th>To-Do</th>
                 <th>Due Date</th>
@@ -123,48 +129,41 @@
                 <th>Progress</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="taskBody">
               <tr>
-                <td class="text-center">
-                  <span class="badge bg-danger">High</span>
+                <td>
+                  <select class="form-select form-select-sm">
+                    <option value="High" class="text-danger">High</option>
+                    <option value="Medium" class="text-warning">Medium</option>
+                    <option value="Low" class="text-success">Low</option>
+                  </select>
                 </td>
-                <td>WebProj</td>
-                <td>Font, Colour Palette, Theme</td>
-                <td class="text-center">Thu, 13/3</td>
-                <td class="text-center">5/10</td>
+                <td><input type="text" class="form-control form-control-sm" placeholder="Task name"></td>
+                <td><input type="text" class="form-control form-control-sm" placeholder="To-Do detail"></td>
+                <td><input type="date" class="form-control form-control-sm"></td>
+                <td>
+                  <input type="number" class="form-control form-control-sm pomodoro-total" placeholder="10">
+                  <small class="text-white-50">Done: <span class="pomodoro-done">0</span></small>
+                  <button class="btn btn-sm btn-outline-light mt-1 pomodoro-increase">+1 Pomodoro</button>
+                </td>
                 <td>
                   <div class="progress">
-                    <div class="progress-bar bg-secondary" style="width: 50%"></div>
+                    <div class="progress-bar bg-success" style="width: 0%;" role="progressbar"></div>
                   </div>
-                  <small>50%</small>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">
-                  <span class="badge bg-warning text-dark">Medium</span>
-                </td>
-                <td>Database</td>
-                <td>1NF, 2NF, 3NF, BCNF, 4NF, 5NF</td>
-                <td class="text-center">Tue, 18/3</td>
-                <td class="text-center">0/6</td>
-                <td>
-                  <div class="progress">
-                    <div class="progress-bar bg-secondary" style="width: 0%"></div>
-                  </div>
-                  <small>0%</small>
+                  <small><span class="progress-text">0%</span></small>
                 </td>
               </tr>
             </tbody>
           </table>
-          <a href="#" class="text-white">+ New</a>
+          <button class="btn btn-sm btn-outline-light mt-3" id="addTaskBtn">+ Add Task</button>
         </div>
   
-        <!-- QUOTE & IMAGE -->
-        <div class="col-lg-4">
-          <div class="text-center mb-3">
-            <img src="tree.png" alt="Tree" class="img-fluid" style="max-height: 250px;" />
+        <!-- KANAN -->
+        <div class="col-lg-4 d-flex flex-column align-items-center">
+          <div class="mb-4">
+            <img src="tree-nobg.png" alt="Tree" class="img-fluid" style="max-height: 250px;" />
           </div>
-          <div class="bg-brown text-white p-3 rounded">
+          <div class="bg-brown text-white p-3 rounded w-100">
             <p class="mb-0">
               “Seek to be whole, not perfect.”<br />
               <em>-Oprah Winfrey</em>
@@ -175,7 +174,6 @@
     </div>
   </section>
   
-
         
   <script src="taskmanager.js"></script>
 </body>

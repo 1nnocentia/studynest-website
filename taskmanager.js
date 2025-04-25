@@ -66,3 +66,93 @@ const reminderInput = document.getElementById("reminderInput");
     });
 
     updatePlaceholders(); // initial setup
+
+    document.addEventListener("DOMContentLoaded", function () {
+        function addTaskRow() {
+          const taskBody = document.getElementById("taskBody");
+      
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>
+              <select class="form-select form-select-sm">
+                <option value="High" class="text-danger">High</option>
+                <option value="Medium" class="text-warning">Medium</option>
+                <option value="Low" class="text-success">Low</option>
+              </select>
+            </td>
+            <td><input type="text" class="form-control form-control-sm" placeholder="Task name"></td>
+            <td><input type="text" class="form-control form-control-sm" placeholder="To-Do detail"></td>
+            <td><input type="date" class="form-control form-control-sm"></td>
+            <td>
+                <div class="d-flex align-items-center gap-2">
+                <span class="pomodoro-done">0</span> /
+                <input type="number" class="form-control form-control-sm pomodoro-total" style="width: 80px;" placeholder="10">
+                </div>
+                <button class="btn btn-sm btn-outline-light mt-1 pomodoro-increase">+1 Pomodoro</button>
+            </td>
+            <td>
+              <div class="progress">
+                <div class="progress-bar bg-success" style="width: 0%;" role="progressbar"></div>
+              </div>
+              <small><span class="progress-text">0%</span></small>
+            </td>
+          `;
+          taskBody.appendChild(row);
+          addPomodoroEvent(row);
+        }
+      
+        function addPomodoroEvent(row) {
+          const button = row.querySelector(".pomodoro-increase");
+          button.addEventListener("click", function () {
+            const totalInput = row.querySelector(".pomodoro-total");
+            const doneSpan = row.querySelector(".pomodoro-done");
+            const progressBar = row.querySelector(".progress-bar");
+            const progressText = row.querySelector(".progress-text");
+      
+            let total = parseInt(totalInput.value) || 0;
+            let done = parseInt(doneSpan.textContent) || 0;
+      
+            if (done < total && total > 0) {
+              done += 1;
+              const percent = Math.round((done / total) * 100);
+              doneSpan.textContent = done;
+              progressBar.style.width = percent + "%";
+              progressText.textContent = percent + "%";
+            }
+          });
+        }
+      
+        // Initial row
+        addTaskRow();
+      
+        // Add new row on click
+        const addTaskBtn = document.getElementById("addTaskBtn");
+        addTaskBtn.addEventListener("click", addTaskRow);
+      });
+
+      function increasePomodoroCount(row) {
+        const totalInput = row.querySelector(".pomodoro-total");
+        const doneSpan = row.querySelector(".pomodoro-done");
+        const progressBar = row.querySelector(".progress-bar");
+        const progressText = row.querySelector(".progress-text");
+      
+        let total = parseInt(totalInput.value) || 0;
+        let done = parseInt(doneSpan.textContent) || 0;
+      
+        if (done < total && total > 0) {
+          done += 1;
+          const percent = Math.round((done / total) * 100);
+          doneSpan.textContent = done;
+          progressBar.style.width = percent + "%";
+          progressText.textContent = percent + "%";
+        }
+      }
+      
+      function addPomodoroEvent(row) {
+        const button = row.querySelector(".pomodoro-increase");
+        button.addEventListener("click", function () {
+          increasePomodoroCount(row);
+        });
+      }
+      
+      increasePomodoroCount(targetRow);

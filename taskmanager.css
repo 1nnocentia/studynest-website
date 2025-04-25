@@ -103,3 +103,39 @@
   .bg-brown {
     background-color: #4A4235;
   }
+  
+  .quick-btn {
+    transition: 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .quick-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    background-color: #6f5f4a;
+  }
+
+  #taskTable td,
+  #taskTable th {
+    vertical-align: middle;
+    text-align: center;
+    background-color: black;
+  }
+  
+  #taskTable input,
+  #taskTable select {
+    background-color: black;
+    color: white;
+    border: 1px solid #aaa;
+  }
+  
+  #taskTable input::placeholder {
+    color: #ccc;
+    font-size: 0.85rem;
+  }
+  
+  .pomodoro-increase {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
