@@ -32,9 +32,9 @@
   <section class="py-5 text-white" style="width: 100%; height: 200px;">
   </section>
 
-  <!--Section2 - Whats happening & Reminder-->
+  <!--Section2 - Whats happening-->
   <section class="task-section py-5 text-white">
-    <div class="container">
+    <section class="container">
       <h2 class="mb-5 playfair">My Task Manager</h2>
   
       <div class="row g-4">
@@ -47,38 +47,136 @@
           </div>
           </div>
         </div>
-  
-        <!-- Kolom kanan besar -->
-        <div class="col-md-9">
-          <div class="p-3 rounded" style="background-color: #8b7e65;">
-            <p>📌 <strong>What is happening this week?</strong></p>
-            <ul class="mb-0">
-              <li>Happening 1</li>
-              <li>Happening 2</li>
-            </ul>
+               <!-- What's Happening -->
+      <class class="col">
+        <div class="task-box">
+          <h5>📌 What is happening this week?</h5>
+          <div id="happeningList">
+            <input type="text" class="happening-input" placeholder="This week...">
+            <input type="text" class="happening-input" placeholder="This week...">
           </div>
         </div>
-  
-        <!-- Baris bawah (2 kolom) -->
+        </class>
+        </div>
+      </section>
+      </section>
+      
+      <!-- Section3 - Reminder & Affirmation -->
+      <section class="task-section py-1 text-white">
+       <section class="container">
+          <div class="row g-4">
+            <!-- Reminder -->
+            <div class="col-md-6">
+              <div class="task-box reminder-box">
+                <h5>❗ Reminder</h5>
+                <div id="reminderList"></div>
+                <input type="text" id="reminderInput" placeholder="Write a reminder...">
+              </div>
+            </div>
+
+        <!-- My daily affirmation -->
         <div class="col-md-6">
           <div class="p-3 rounded" style="background-color: #8b7e65;">
-            <p>❗<strong> Reminder</strong></p>
-            <ul class="mb-0">
-              <li>Reminder 1</li>
-              <li>Reminder 2</li>
-            </ul>
+            <p>🌞 <strong>My daily affirmation</strong></p>
+            <input type="text" class="affirmation-input" placeholder="Today affirmation...">
           </div>
         </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Section4-->
+  <section class="task-section py-5 text-white">
+    <div class="container">
+      <!-- QUICK BUTTON -->
+      <div class="bg-brown p-2 rounded mb-4">
+        <h5 class="mb-0">Quick Button</h5>
+      </div>
   
-        <div class="col-md-5">
-          <div class="p-3 rounded" style="background-color: #8b7e65;">
-            <p>🌞 <strong>My daily affirmation</strong></p>
+      <div class="row text-center mb-5">
+        <div class="col">
+          <i class="bi bi-clock display-6 d-block"></i>
+          <span>Pomodoro Timer</span>
+        </div>
+        <div class="col">
+          <i class="bi bi-kanban display-6 d-block"></i>
+          <span>Task</span>
+        </div>
+      </div>
+  
+      <!-- TASK TITLE -->
+      <div class="bg-brown p-2 rounded mb-3">
+        <h5 class="mb-0">Task</h5>
+      </div>
+  
+      <div class="row">
+        <!-- TABLE TASK -->
+        <div class="col-lg-8">
+          <table class="table table-bordered table-dark table-sm align-middle text-white">
+            <thead>
+              <tr class="text-center">
+                <th>Priority</th>
+                <th>Name</th>
+                <th>To-Do</th>
+                <th>Due Date</th>
+                <th>Pomodoro</th>
+                <th>Progress</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">
+                  <span class="badge bg-danger">High</span>
+                </td>
+                <td>WebProj</td>
+                <td>Font, Colour Palette, Theme</td>
+                <td class="text-center">Thu, 13/3</td>
+                <td class="text-center">5/10</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-secondary" style="width: 50%"></div>
+                  </div>
+                  <small>50%</small>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <span class="badge bg-warning text-dark">Medium</span>
+                </td>
+                <td>Database</td>
+                <td>1NF, 2NF, 3NF, BCNF, 4NF, 5NF</td>
+                <td class="text-center">Tue, 18/3</td>
+                <td class="text-center">0/6</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-secondary" style="width: 0%"></div>
+                  </div>
+                  <small>0%</small>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="#" class="text-white">+ New</a>
+        </div>
+  
+        <!-- QUOTE & IMAGE -->
+        <div class="col-lg-4">
+          <div class="text-center mb-3">
+            <img src="tree.png" alt="Tree" class="img-fluid" style="max-height: 250px;" />
+          </div>
+          <div class="bg-brown text-white p-3 rounded">
+            <p class="mb-0">
+              “Seek to be whole, not perfect.”<br />
+              <em>-Oprah Winfrey</em>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-    
-  </section>
+  
+
+        
+  <script src="taskmanager.js"></script>
 </body>
 </html>

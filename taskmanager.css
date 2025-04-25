@@ -23,7 +23,6 @@
   html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* Mencegah scrolling */
   }
 
   body {
@@ -58,4 +57,49 @@
     align-items: center;
     height: 120px;
     border-radius: 0.375rem;
+  }
+
+  .task-box {
+    background-color: #7b6b55;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .reminder-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5c503f;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+  }
+
+  .reminder-item label {
+    margin: 0;
+    flex: 1;
+  }
+
+  .reminder-box input[type="text"],
+  .happening-input,
+  .affirmation-input {
+    background: transparent;
+    border: none;
+    border-bottom: none;
+    color: white;
+    outline: none;
+    padding: 8px 4px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .reminder-box input::placeholder,
+  .happening-input::placeholder,
+  .affirmation-input::placeholder {
+    color: #ccc;
+  }
+
+  .bg-brown {
+    background-color: #4A4235;
   }
