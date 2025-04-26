@@ -15,7 +15,7 @@
 </head>
 <body>
           <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid px-4">
       <a class="navbar-brand fw-bold text-white d-flex align-items-center gap-2" href="index.html">
         <img src="logo.png" alt="logo" style="height: 30px;"/>
@@ -130,29 +130,6 @@
               </tr>
             </thead>
             <tbody id="taskBody">
-              <tr>
-                <td>
-                  <select class="form-select form-select-sm">
-                    <option value="High" class="text-danger">High</option>
-                    <option value="Medium" class="text-warning">Medium</option>
-                    <option value="Low" class="text-success">Low</option>
-                  </select>
-                </td>
-                <td><input type="text" class="form-control form-control-sm" placeholder="Task name"></td>
-                <td><input type="text" class="form-control form-control-sm" placeholder="To-Do detail"></td>
-                <td><input type="date" class="form-control form-control-sm"></td>
-                <td>
-                  <input type="number" class="form-control form-control-sm pomodoro-total" placeholder="0">
-                  <small class="text-white-50">Done: <span class="pomodoro-done">0</span></small>
-                  <button class="btn btn-sm btn-outline-light mt-1 pomodoro-increase">+1 Pomodoro</button>
-                </td>
-                <td>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" style="width: 0%;" role="progressbar"></div>
-                  </div>
-                  <small><span class="progress-text">0%</span></small>
-                </td>
-              </tr>
             </tbody>
           </table>
           <button class="btn btn-sm btn-outline-light mt-3" id="addTaskBtn">+ Add Task</button>

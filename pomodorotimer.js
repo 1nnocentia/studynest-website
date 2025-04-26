@@ -5,7 +5,7 @@ const modeItems = document.querySelectorAll('.mode-item');
 const sessionCounter = document.querySelector('.text-white small'); // Menambahkan referensi untuk menampilkan sesi
 
 let durations = {
-  pomodoro: 25 * 60,
+  pomodoro: 20 * 60,
   short: 5 * 60,
   long: 15 * 60
 };
@@ -92,3 +92,4 @@ modeItems.forEach(item => {
 // Initial display
 updateDisplay();
 updateSessionCounter(); // Inisialisasi counter sesi
+
