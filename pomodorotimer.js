@@ -67,13 +67,13 @@ startBtn.addEventListener("click", () => {
 resetBtn.addEventListener("click", () => {
   clearInterval(countdown);
   isRunning = false;
-  sessionsCompleted = 0; // Reset sesi selesai ketika reset
-  currentMode = "pomodoro"; // Reset ke mode Pomodoro
-  timeLeft = durations[currentMode];
+  sessionsCompleted = 0; // Reset sesi selesai
+  timeLeft = durations[currentMode]; // Reset sesuai tab yang sedang aktif
   updateDisplay();
-  updateSessionCounter(); // Reset counter sesi
+  updateSessionCounter();
   startBtn.textContent = "Start";
 });
+
 
 modeItems.forEach(item => {
   item.addEventListener("click", () => {

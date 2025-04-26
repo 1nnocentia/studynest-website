@@ -84,11 +84,14 @@ const reminderInput = document.getElementById("reminderInput");
             <td><input type="text" class="form-control form-control-sm" placeholder="To-Do detail"></td>
             <td><input type="date" class="form-control form-control-sm"></td>
             <td>
-                <div class="d-flex align-items-center gap-2">
+              <div class="d-flex align-items-center gap-2 text-white">
                 <span class="pomodoro-done">0</span> /
-                <input type="number" class="form-control form-control-sm pomodoro-total" style="width: 80px;" placeholder="10">
-                </div>
-                <button class="btn btn-sm btn-outline-light mt-1 pomodoro-increase">+1 Pomodoro</button>
+                <span class="pomodoro-total">0</span>
+              </div>
+              <div class="d-flex gap-2 mt-1">
+                <button class="btn btn-sm btn-outline-light pomodoro-increase">+1</button>
+                <button class="btn btn-sm btn-outline-light pomodoro-decrease">-1</button>
+              </div>
             </td>
             <td>
               <div class="progress">
@@ -102,25 +105,41 @@ const reminderInput = document.getElementById("reminderInput");
         }
       
         function addPomodoroEvent(row) {
-          const button = row.querySelector(".pomodoro-increase");
-          button.addEventListener("click", function () {
-            const totalInput = row.querySelector(".pomodoro-total");
-            const doneSpan = row.querySelector(".pomodoro-done");
-            const progressBar = row.querySelector(".progress-bar");
-            const progressText = row.querySelector(".progress-text");
-      
-            let total = parseInt(totalInput.value) || 0;
+          const increaseBtn = row.querySelector(".pomodoro-increase");
+          const decreaseBtn = row.querySelector(".pomodoro-decrease");
+          const doneSpan = row.querySelector(".pomodoro-done");
+          const totalSpan = row.querySelector(".pomodoro-total");
+          const progressBar = row.querySelector(".progress-bar");
+          const progressText = row.querySelector(".progress-text");
+        
+          increaseBtn.addEventListener("click", function () {
+            let total = parseInt(totalSpan.textContent) || 0;
+            total += 1;
+            totalSpan.textContent = total;
+        
+            const done = parseInt(doneSpan.textContent) || 0;
+            const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+            progressBar.style.width = percent + "%";
+            progressText.textContent = percent + "%";
+          });
+        
+          decreaseBtn.addEventListener("click", function () {
+            let total = parseInt(totalSpan.textContent) || 0;
             let done = parseInt(doneSpan.textContent) || 0;
-      
-            if (done < total && total > 0) {
-              done += 1;
-              const percent = Math.round((done / total) * 100);
-              doneSpan.textContent = done;
-              progressBar.style.width = percent + "%";
-              progressText.textContent = percent + "%";
-            }
+        
+            if (total > 0) total -= 1;
+            if (done > total) done = total;
+        
+            totalSpan.textContent = total;
+            doneSpan.textContent = done;
+        
+            const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+            progressBar.style.width = percent + "%";
+            progressText.textContent = percent + "%";
           });
         }
+        
+        
       
         // Initial row
         addTaskRow();
