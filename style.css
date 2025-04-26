@@ -1,19 +1,28 @@
-body {
+body, html {
     margin: 0;
+    padding: 0;
+    height: auto;
     font-family: 'Source Sans 3', sans-serif;
     background: linear-gradient(to bottom right, #D4E6B5, #AFC97E, #E2D686);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
   
   .navbar {
     background: transparent;
     font-family: 'Playfair Display', serif;
-    padding-top: 0.5rem;
+    padding: 0.8rem 1rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
   }
   
   .navbar-brand {
     font-family: 'Playfair Display', serif;
     letter-spacing: 1px;
-    font-weight: 100;
+    font-size: 1.2rem;
   }
   
   .nav-link {
@@ -22,12 +31,14 @@ body {
   }
   
   .hero-section {
-    height: 90vh;
+    min-height: 100vh;
+    padding: 2rem 1rem;
   }
   
   .hero-logo {
     width: 300px;
     max-width: 100%;
+    height: auto;
   }
   
   .title-text {
@@ -60,3 +71,32 @@ body {
     background-color: #ffd84a;
     color: #9e1010;
   }
+
+  .hero-section {
+    min-height: 100vh;
+    background: transparent;
+    padding-top: 80px; /* space for navbar */
+  }
+  
+  .hero-logo {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .title-text {
+    font-size: 2.5rem;
+  }
+  
+  .body-text {
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .title-text {
+      font-size: 2rem;
+    }
+  
+    .body-text {
+      font-size: 1rem;
+    }
+  }  

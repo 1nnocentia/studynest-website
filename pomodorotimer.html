@@ -8,73 +8,69 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-  <!--CSS-->
   <link rel="stylesheet" href="pomodorotimerstyle.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-      <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
-
     <div class="container-fluid px-4">
       <a class="navbar-brand fw-bold text-white d-flex align-items-center gap-2" href="index.html">
         <img src="logo.png" alt="logo" style="height: 30px;"/>
-        STUDY NEST</a>
-      <div class="ms-auto d-flex align-items-center">
-        <a class="nav-link text-white" href="about.html">About</a>
-        <span class="px-2 text-white">|</span>
-        <a class="nav-link text-white" href="#">Log In</a>
+        STUDY NEST
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Log In</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </nav>  
-<!-- Go to Tasks Button - Right Top (offset dari navbar) -->
-<div class="position-absolute" style="top: 80px; right: 20px; z-index: 999;">
+  </nav>
+  <!-- Go to Tasks Button -->
+  <div class="position-fixed" style="top: 80px; right: 20px; z-index: 999; max-width: 200px;">
     <div class="task-box p-3 rounded-3 shadow text-center" style="background-color: rgba(135, 123, 102, 0.6);">
       <h6 class="text-white mb-3">📝 Manage Tasks</h6>
       <a href="taskmanager.html" class="btn btn-warning rounded-pill px-4 fw-semibold">Go to Tasks</a>
     </div>
   </div>
-  
-  
-<!-- Section -->
-<section class="container-fluid vh-100 d-flex align-items-center justify-content-center">
-    <div class="row w-100 align-items-center justify-content-center">
-  
-      <!-- Col 1: Timer -->
-      <div class="col-12 col-md-6 mb-4">
+  <!-- Section -->
+  <section class="container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
+    <div class="row w-100 justify-content-center">
+      <div class="col-12 col-md-6">
         <div class="timer-card p-4 rounded-4 shadow-lg text-center text-white mx-auto" style="max-width: 420px;">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-white">Study Session</span>
             <span class="small"><i class="bi bi-list-task"></i> 0/5</span>
           </div>
           <h1 id="timer" class="display-3 fw-bold mb-3">20:00</h1>
-          <div class="d-flex justify-content-center gap-3">
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
             <button id="startBtn" class="btn btn-success rounded-pill px-4">Start</button>
             <button id="resetBtn" class="btn btn-outline-light rounded-pill px-4">Reset</button>
           </div>
-          <div class="mt-4 d-flex justify-content-around small text-white-50">
+          <div class="mt-4 d-flex justify-content-around small text-white-50 flex-wrap">
             <span class="mode-item active" data-mode="pomodoro">Pomodoro</span>
             <span class="mode-item" data-mode="short">Short Break</span>
             <span class="mode-item" data-mode="long">Long Break</span>
           </div>
         </div>
       </div>
-  
-  
     </div>
   </section>
-  
   <!-- Spotify -->
-  <div class="spotify-container">
+  <div class="spotify-container px-3 pb-4">
     <iframe id="spotify" width="100%" height="80" frameborder="0"
       src="https://open.spotify.com/embed/playlist/4Zjli1P13J5mmSCD5iKAXK?theme=0"
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
   </div>
-  
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="pomodorotimer.js"></script>
 </body>
 </html>
-  

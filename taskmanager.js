@@ -102,7 +102,20 @@ const reminderInput = document.getElementById("reminderInput");
           `;
           taskBody.appendChild(row);
           addPomodoroEvent(row);
+
+          const dateInput = row.querySelector("input[type='date']");
+          dateInput.addEventListener("change", function () {
+            const selectedDate = new Date(dateInput.value);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Set time to midnight for comparison
+
+            if (selectedDate <= today) {
+              alert("Due date must be later than today.");
+              dateInput.value = ""; // Clear the invalid date
+            }
+    });
         }
+
       
         function addPomodoroEvent(row) {
           const increaseBtn = row.querySelector(".pomodoro-increase");
